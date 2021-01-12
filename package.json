@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01os.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cpu-stat": "2.0.1",
+    "connect": "3.7.0",
+    "cors": "2.8.5",
+    "jsonwebtoken": "8.5.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

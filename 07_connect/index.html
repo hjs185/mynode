@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    axios.get("http://localhost:3000").then(res => {
+      console.log(res);
+    });
+    // 会触发浏览器预请求，多一个请求，Request Method: OPTIONS
+    axios
+      .post(
+        "http://localhost:3000/info",
+        { name: "hjs" },
+        {
+          headers: {
+            "X-Token": "123"
+          }
+        }
+      )
+      .then(res => {
+        console.log(res, 1111);
+      });
+  </script>
+</html>
