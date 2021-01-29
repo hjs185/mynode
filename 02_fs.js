@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 function show1() {
   // 同步读取文件
@@ -62,3 +63,43 @@ function show4() {
   // });
 }
 // show4();
+
+// 往文件写入数据（覆盖）
+function show5() {
+  fs.writeFile(
+    path.join(__dirname, "./temp.txt"),
+    JSON.stringify({ id: 10 }),
+    err => {
+      if (err) {
+        // 读文件是不存在报错
+        // 意外错误
+        // 文件权限问题
+        // 文件夹找不到(不会自动创建文件夹)
+        console.log(err);
+      } else {
+        console.log("success");
+      }
+    }
+  );
+}
+// show5();
+
+// 往文件写入数据（追加）
+function show6() {
+  fs.appendFile(
+    path.join(__dirname, "./temp.txt"),
+    JSON.stringify({ id: 10 }),
+    err => {
+      if (err) {
+        // 读文件是不存在报错
+        // 意外错误
+        // 文件权限问题
+        // 文件夹找不到(不会自动创建文件夹)
+        console.log(err);
+      } else {
+        console.log("success");
+      }
+    }
+  );
+}
+show6();
